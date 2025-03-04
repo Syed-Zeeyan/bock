@@ -13,7 +13,9 @@ const Reels = () => {
 
     const fetchReels = async () => {
         try {
-            const res = await axios.get('http://localhost:8000/api/v1/reels');
+            // const res = await axios.get('http://localhost:8000/api/v1/reels');
+            const res = await axios.get(`${process.env.BASE_URL}/reels`);
+
             setReels(res.data.reels);
         } catch (error) {
             console.error("Error fetching reels:", error);
